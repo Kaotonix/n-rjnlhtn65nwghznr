@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#2a0f2e"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2248%22 fill=%22%234a1d45%22/%3E%3Ctext x=%2250%22 y=%2268%22 font-size=%2252%22 text-anchor=%22middle%22 fill=%22%23f6b73c%22%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+<title>Notes</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%}
+body{background:radial-gradient(120% 80% at 50% 0%,#5a2350 0,#2a0f2e 48%,#140818 100%) fixed;color:#fdf0d8;font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 20px calc(24px + env(safe-area-inset-bottom))}
+.box{width:100%;max-width:360px;text-align:center;transition:opacity .3s}
+body.busy .box{opacity:.0}
+.glow{width:78px;height:78px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;font-size:34px;color:#2a1020;background:radial-gradient(circle at 35% 30%,#ffe39a,#f6b73c 55%,#c97a1c);box-shadow:0 0 40px #f6b73c66}
+h1{font:400 28px/1.15 Georgia,"Iowan Old Style",serif;color:#ffe9c2;margin:0 0 6px}
+p{color:#c9adc2;font-size:14px;margin:0 0 22px}
+form{display:flex;flex-direction:column;gap:12px}
+input{width:100%;font:500 18px/1 inherit;font-size:18px;text-align:center;letter-spacing:.12em;padding:15px 16px;border-radius:16px;border:1px solid #f6b73c55;background:#1c0a20cc;color:#fff3dc;outline:none;-webkit-appearance:none}
+input:focus{border-color:#f6b73c;box-shadow:0 0 0 3px #f6b73c33}
+button{font:600 16px inherit;font-size:16px;padding:15px;border:0;border-radius:16px;background:linear-gradient(#f8c45a,#f0a72e);color:#2a1020;cursor:pointer;min-height:52px}
+button:disabled{opacity:.6}
+.msg{min-height:20px;font-size:13.5px;color:#ffb38a;margin-top:4px}
+.shake{animation:sh .4s}
+@keyframes sh{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+noscript{color:#ffb38a}
+</style></head><body class="busy">
+<div class="box" id="box">
+<div class="glow">✦</div>
+<h1>A little private corner</h1>
+<p>Enter the passcode to open these notes.</p>
+<form id="f" autocomplete="off"><input id="pw" type="password" inputmode="text" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="passcode" aria-label="Passcode" required>
+<button id="go" type="submit">Open</button></form>
+<div class="msg" id="msg" role="status"></div>
+<noscript>This page needs JavaScript.</noscript>
+</div>
+<script>
+(function(){
+var P={"v":1,"it":600000,"s":"JIlIf05cTUUto3rIc2HJrg==","iv":"izL0A6oxrMcsduIB","ct":"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"};
+var K='nv_key_'+P.s, enc=new TextEncoder(), S=crypto.subtle;
+function b64(s){var b=atob(s),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u}
+function tob64(buf){var u=new Uint8Array(buf),s='';for(var i=0;i<u.length;i++)s+=String.fromCharCode(u[i]);return btoa(s)}
+function open(raw,ok){return S.importKey('raw',raw,'AES-GCM',false,['decrypt']).then(function(k){return S.decrypt({name:'AES-GCM',iv:b64(P.iv)},k,b64(P.ct))}).then(function(pt){
+  var html=new TextDecoder().decode(pt);if(ok)ok();return new Promise(function(res){function w(){document.open();document.write(html);document.close();res()}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',function(){setTimeout(w,0)});else w()})})}
+function ready(){document.body.classList.remove('busy');setTimeout(function(){document.getElementById('pw').focus()},50)}
+if(!window.crypto||!S){document.getElementById('msg').textContent='This browser can\u2019t open protected pages.';ready();return}
+var cached=null;try{cached=sessionStorage.getItem(K)}catch(e){}
+if(cached){open(b64(cached)).catch(function(){try{sessionStorage.removeItem(K)}catch(e){}ready()})}else ready();
+var f=document.getElementById('f'),pw=document.getElementById('pw'),go=document.getElementById('go'),msg=document.getElementById('msg'),box=document.getElementById('box');
+f.addEventListener('submit',function(e){e.preventDefault();var v=pw.value.trim();if(!v)return;go.disabled=true;go.textContent='Opening\u2026';msg.textContent='';
+  S.importKey('raw',enc.encode(v),'PBKDF2',false,['deriveBits']).then(function(b){return S.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:b64(P.s),iterations:P.it},b,256)}).then(function(raw){
+    return open(raw,function(){try{sessionStorage.setItem(K,tob64(raw))}catch(e){}})}).catch(function(){
+    go.disabled=false;go.textContent='Open';msg.textContent='That\u2019s not it. Try again.';pw.value='';box.classList.remove('shake');void box.offsetWidth;box.classList.add('shake');pw.focus()})});
+})();
+</script></body></html>
